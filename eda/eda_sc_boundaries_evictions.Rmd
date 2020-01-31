@@ -1,0 +1,33 @@
+---
+title: 
+author: 
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r message=FALSE, warning=FALSE}
+# Libraries
+library(tidyverse)
+
+# Parameters
+sc_eviction_boundaries <- here::here("data/sc_boundaries_convictions.rds")
+
+#===============================================================================
+
+# Code
+```
+
+```{r}
+
+df <- read_rds(sc_eviction_boundaries)
+
+df %>%
+  top_n(1, evictions)
+```
+
